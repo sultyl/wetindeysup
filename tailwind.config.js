@@ -1,22 +1,43 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports= {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
       },
       screens: {
-        'sm': '360px', // Adjust the breakpoint as needed
-        // ...
+        'xsm': '360px', // Adjust the breakpoint as needed
       },
-    },
+      colors: {
+        primary: "#3F3849",
+        secondary: "#CBC5D3",
+        brand: {
+          blue: {
+            100: "#F2F1F4",
+            300: "#D2F5FE",
+          },
+          gray: {
+            100: "#F7F6F8",
+            300: "#F0F0F0",
+            400: "#726E7C",
+            600: "#CBC5D3",
+          },
+          pink: {
+            300: "#FFEEEB",
+            400: "#FFC6BC",
+            500: "#FFE0C4",
+          },
+          purple: {
+            "300": "#EEE0FF",
+          },
+        },
+      },
   },
+},
   plugins: [],
-}
+};
