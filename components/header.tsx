@@ -6,7 +6,7 @@ import { HeaderProps } from "@/@types";
 
 export default function Header({ title, info }: HeaderProps) {
   return (
-    <header className="w-full flex justify-between h-max sticky top-0 bg-brand-gray-100 z-20 py-10">
+    <header className="min-w-full flex justify-between h-max sticky top-0 bg-brand-gray-100 z-20 py-10">
       {/* Title section */}
       <div className="">
         <h2 className="text-2xl font-bold">{title}</h2>
@@ -14,7 +14,7 @@ export default function Header({ title, info }: HeaderProps) {
       </div>
 
       {/* Search */}
-      <div className="w-80 h-14 relative">
+      <div className="w-80 h-14 relative items-center">
         <input
           placeholder="Find an event"
           className="h-full w-full border border-black/40 rounded-2xl p-2 pl-16 text-primary placeholder:text-brand-gray-600 focus:outline-none bg-transparent"
@@ -26,13 +26,13 @@ export default function Header({ title, info }: HeaderProps) {
 
       {/* Profile */}
       <div className="flex gap-2 items-center">
-        <div className="w-12 h-12 rounded-full overflow-hidden">
+        <div className="rounded-full overflow-hidden">
           <Image
             src={Avatar}
             alt="logo"
-            width={200}
-            height={200}
-            className="w-auto h-auto"
+            width={47}
+            height={47}
+            className="rounded-full"
           />
         </div>
         <p className="font-semibold text-lg">Salome</p>
