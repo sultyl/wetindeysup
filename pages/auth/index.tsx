@@ -8,6 +8,7 @@ import PageIndicator from "@/public/assets/icon/pageIndicator.svg";
 import Link from "next/link";
 
 const Auth: React.FC = () => {
+  
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
       <div className="hidden md:flex py-2 bg-[#3F3849] justify-center items-center">
