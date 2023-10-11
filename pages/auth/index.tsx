@@ -31,7 +31,7 @@ const Auth: React.FC = () => {
       <div className="md:bg-[#F7F6F8] bg-[#3F3849] md:pt-14">
         <Image src={Logo} className="pl-8 hidden md:flex" width={200} height={60} alt="Logo" />
         <div className="px-8 md:px-12 lg:px-16 mb-6 flex justify-center items-center min-h-screen md:min-h-full lg:min-h-[500px] xl:h-[80%]">
-          <div>
+          <Link href='/'>
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="23" viewBox="0 0 28 23" fill="none" className="md:hidden mb-8">
               <path fillRule="evenodd" clipRule="evenodd" d="M13.3161 22.3257C12.8785 22.7575 12.2851 23 11.6664 23C11.0476 23 10.4543 22.7575 10.0167 22.3257L0.683181 13.1142C0.245741 12.6824 0 12.0967 0 11.4861C0 10.8755 0.245741 10.2898 0.683181 9.85796L10.0167 0.646446C10.4568 0.226958 11.0462 -0.00515987 11.658 8.70545e-05C12.2698 0.00533398 12.855 0.247526 13.2876 0.674498C13.7203 1.10147 13.9657 1.67906 13.971 2.28287C13.9763 2.88668 13.7411 3.46839 13.3161 3.90272L7.96564 9.18322H25.6666C26.2855 9.18322 26.879 9.42584 27.3166 9.85772C27.7542 10.2896 28 10.8753 28 11.4861C28 12.0969 27.7542 12.6826 27.3166 13.1145C26.879 13.5464 26.2855 13.789 25.6666 13.789H7.96564L13.3161 19.0695C13.7535 19.5013 13.9993 20.087 13.9993 20.6976C13.9993 21.3083 13.7535 21.8939 13.3161 22.3257Z" fill="white"/>
             </svg>
@@ -106,7 +106,7 @@ const Auth: React.FC = () => {
               By continuing, you agree with our{" "}
               <span className="font-semibold text-[#8C8896] md:text-black">privacy policy</span>
             </p>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

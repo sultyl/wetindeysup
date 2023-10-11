@@ -15,7 +15,7 @@ import Link from "next/link";
 
 type Anchor = "left" | "top" | "bottom" | "right";
 
-function MainLayout({ children }: MainLayoutProps) {
+function MainLayout({ children, title, href, showSearchInput }: MainLayoutProps) {
   const [state, setState] = useState({
     left: false,
   });
@@ -29,13 +29,13 @@ function MainLayout({ children }: MainLayoutProps) {
       <div className="md:hidden lg:hidden bg-primary min-h-[445px]">
         <div className="px-6 pt-12 flex flex-col gap-8">
           <div className="flex justify-between">
-            <h1 className="text-[#f9f9fb] text-4xl font-bold">Header</h1>
+            <h1 className="text-[#f9f9fb] text-4xl font-bold">{title}</h1>
             <div className="flex items-center">
-              <Link href='/timeline/create-events'>
+              <Link href={href}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <g clip-path="url(#clip0_4_1613)">
-                    <path d="M16 6.6665V25.3332" stroke="#F2F2F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M6.66669 16H25.3334" stroke="#F2F2F2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 6.6665V25.3332" stroke="#F2F2F2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6.66669 16H25.3334" stroke="#F2F2F2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </g>
                   <defs>
                     <clipPath id="clip0_4_1613">
@@ -49,17 +49,19 @@ function MainLayout({ children }: MainLayoutProps) {
               </Button>
             </div>
           </div>
-          <div className="w-full flex justify-center">
-            <div className="w-80 h-14 relative items-center">
-              <input
-                placeholder="Find an event"
-                className="h-full md:bg-none bg-white w-full md:border border-black/40 rounded-full p-2 pl-16 text-primary md:placeholder:text-brand-gray-600 placeholder:text-[#3D3D3D] focus:outline-none bg-transparent"
-              />
-              <div className="absolute left-5 top-5">
-                <SearchIcon />
+          {showSearchInput && (
+            <div className="w-full flex justify-center">
+              <div className="w-80 h-14 relative items-center">
+                <input
+                  placeholder="Find an event"
+                  className="h-full md:bg-none bg-white w-full md:border border-black/40 rounded-full p-2 pl-16 text-primary md:placeholder:text-brand-gray-600 placeholder:text-[#3D3D3D] focus:outline-none bg-transparent"
+                />
+                <div className="absolute left-5 top-5">
+                  <SearchIcon />
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
         <Drawer
           anchor="left"

@@ -24,12 +24,12 @@ export default function Sidebar() {
         <NavLinks />
       </div>
 
-      <Link href='/auth'>
-        <button className="flex gap-3 items-center text-white/50 font-medium px-12">
+      <form action={'/'}>
+        <button type="submit" className="flex gap-3 items-center text-white/50 font-medium px-12">
           <LogoutIcon />
           <span>Log Out</span>
         </button>
-      </Link>
+      </form>
     </aside>
   );
 }

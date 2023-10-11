@@ -4,13 +4,13 @@ import PeopleHeader from "@/components/peopleHeader";
 
 export default function PeopleDetails() {
   return (
-    <MainLayout>
+    <div>
       <PeopleHeader />
       <div className=" w-full p-6 grid grid-cols-3 gap-6">
         <MyPeopleCardDetails />
         <MyPeopleCardDetails />
         <MyPeopleCardDetails />
       </div>
-    </MainLayout>
+    </div>
   );
 }

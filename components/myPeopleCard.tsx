@@ -8,21 +8,21 @@ type MyPeopleCardProps = {
 
 export default function MyPeopleCard({ title, events }: MyPeopleCardProps) {
   return (
-    <div className="px-[16px] py-[24px] w-[302px] h-[279px] flex flex-col gap-[16px] bg-pink-400 rounded-[16px] relative">
+    <div className="px-2 py-[24px] md:w-[302px] md:h-[279px] flex flex-col-reverse md:flex-col gap-[16px] bg-pink-400 rounded-[16px]">
       <Image
         className="rounded-[16px] w-[270px]"
         src={TechiesImage}
         alt="Techies"
       />
       <div className="flex flex-col gap-[12px]">
-        <h1 className="font-bold font-montserrat text-[20px] text-primary">
+        <h1 className="font-bold font-montserrat text-lg md:text-[20px] text-primary">
           {title}
         </h1>
-        <h4 className="font-semibold font-sans text-[16px] text-black">
+        <h4 className="font-semibold font-sans text-[15px] md:text-[16px] text-black">
           {events} events
         </h4>
       </div>
-      <span className="absolute top-[136px] left-[193px]">
+      <span className="absolute md:-top-[] md:left-[] opacity-50">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="85"
@@ -51,8 +51,8 @@ export default function MyPeopleCard({ title, events }: MyPeopleCardProps) {
               y2="188.865"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="white" stop-opacity="0" />
-              <stop offset="1" stop-color="white" />
+              <stop stopColor="white" stopOpacity="0" />
+              <stop offset="1" stopColor="white" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_14_7228"
@@ -62,8 +62,8 @@ export default function MyPeopleCard({ title, events }: MyPeopleCardProps) {
               y2="161.097"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="white" stop-opacity="0" />
-              <stop offset="1" stop-color="white" />
+              <stop stopColor="white" stopOpacity="0" />
+              <stop offset="1" stopColor="white" />
             </linearGradient>
           </defs>
         </svg>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function settings() {
   return (
-    <MainLayout>
+    <MainLayout title={"Settings"} href={""} >
       <div className="w-full">
         <div className="mb-8 w-full flex justify-between items-center">
           <div className="space-y-2">

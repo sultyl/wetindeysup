@@ -5,8 +5,8 @@ import MyTimeline from '@/components/layout/myTimeline';
 
 export default function Timeline() {
   return (
-    <MainLayout>
-      <Header title="Header" info="Explore the events happening around you." />
+    <MainLayout title={"Timeline"} href={'/timeline/create-events'}  showSearchInput={true}>
+      <Header title="Timeline" info="Explore the events happening around you." />
       <MyTimeline />
     </MainLayout>
   );
