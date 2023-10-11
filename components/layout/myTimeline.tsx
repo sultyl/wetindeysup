@@ -147,21 +147,21 @@ const MyTimeline: React.FC = () => {
   const [active, setActive] = useState<"friends" | "everyone">("friends");
 
   const pitchData = pitchArray.map((item, index) => (
-    <div key={index} className={`py-6 px-4 rounded-2xl ${item.bg}`}>
-      <Image src={item.imgSrc} className="w-full" alt="" />
-      <div className="relative mt-4 flex justify-between gap-3">
-        <span className="text-black font-sans font-medium text-base">
-          <h2 className="font-sans text-xl font-bold text-[#3F3849]">
+    <div key={index} className={`py-6 px-4 rounded-2xl flex gap-4 md:block ${item.bg}`}>
+      <Image src={item.imgSrc} className="md:w-full w-[56px] h-[56px] md:h-[211px]" alt="" />
+      <div className="relative md:mt-4 flex justify-between gap-3">
+        <span className="text-black font-sans font-medium text-sm leading-3 md:text-base flex flex-col gap-0 z-10">
+          <h2 className="font-sans text-xl font-bold leading-3 text-[#3F3849]">
             {item.name}
           </h2>
           <h6 className="mt-3">{item.date}</h6>
           <p className="mt-3 opacity-70">{item.time}</p>
           <p className="mt-3 font-normal">{item.stadium}</p>
         </span>
-        <button className="z-10 active:scale-[0.95]">
+        <button className="z-10 active:scale-[0.95] md:block flex items-end">
           <NextBtnSVG />
         </button>
-        <div className="absolute top-[-25px] right-[-16px]">
+        <div className="absolute top-[-20px] md:top-[-25px] right-[-2px] md:right-[-16px]">
           <GroupRectangleSVG />
         </div>
       </div>
@@ -169,9 +169,9 @@ const MyTimeline: React.FC = () => {
   ));
 
   return (
-    <div className="w-full h my-8 pb-8">
+    <div className="w-full my-8 pb-8 md:block flex justify-center">
       {/* Discover and Create */}
-      <div className="relative bg-[url('/Rectangle27.png')] bg-cover bg-center min-h-[300px]">
+      <div className="relative bg-[url('/Rectangle27.png')] bg-cover bg-center min-h-[300px] hidden md:block">
         <div className="absolute inset-0 bg-gradient-to-r from-[#3F3849] via-[rgba(63, 56, 73, 0.83)] to-[rgba(63, 56, 73, 0.00)] z-0"></div>
         <div className="p-12">
           <div className="max-w-[420px] w-full font-sans relative z-10">
@@ -190,15 +190,15 @@ const MyTimeline: React.FC = () => {
         </div>
       </div>
       {/* Section */}
-      <div className="mx-auto mt-8 p-6 bg-[#F0F0F0] rounded-2xl">
+      <div className="mx-auto mt-8 md:p-6 md:bg-[#F0F0F0] rounded-2xl bg-transparent md:relative absolute md:top-0 top-40">
         {/* Friends and Today */}
-        <div className="flex justify-between items-center gap-10">
-          <span className="flex items-center gap-10 p-4 text-xl font-sans">
+        <div className="flex justify-center md:justify-between items-center gap-10">
+          <span className="flex w-[250px] h-14 md:w-auto md:h-auto items-center gap-10 p-4 text-sm md:text-xl font-sans bg-[#F0F0F0] md:rounded-none rounded-full">
             <button
               className={`${
                 active === "friends"
-                  ? "font-bold text-[#3F3849] underline"
-                  : "font-medium text-[#84838B]"
+                  ? "font-bold text-[#3F3849] md:bg-transparent bg-[#FFC6BC] rounded-full md:rounded-none  no-underline md:underline py-2 px-6 md:p-0"
+                  : "font-bold text-[#000] md:text-[#84838B] pl-3 md:pl-0"
               } transition-all`}
               onClick={() => setActive("friends")}
             >
@@ -207,15 +207,15 @@ const MyTimeline: React.FC = () => {
             <button
               className={`${
                 active === "everyone"
-                  ? "font-bold text-[#3F3849] underline"
-                  : "font-medium text-[#84838B]"
+                  ? "font-bold text-[#3F3849] md:bg-transparent bg-[#FFC6BC] rounded-full md:rounded-none  no-underline md:underline py-2 px-6 md:p-0"
+                  : "font-bold text-[#000] md:text-[#84838B] pr-3 md:pr-0"
               } transition-all`}
               onClick={() => setActive("everyone")}
             >
               Everyone
             </button>
           </span>
-          <button className="bg-[#FFEEEB] rounded-2xl py-[14px] ps-[18px] pe-3 flex items-center gap-2 border border-[#0000001A] transition-all active:bg-[#fadfc8] active:scale-[0.98]">
+          <button className="bg-[#FFEEEB] rounded-2xl py-[14px] ps-[18px] pe-3 hidden md:flex items-center gap-2 border border-[#0000001A] transition-all active:bg-[#fadfc8] active:scale-[0.98]">
             <h6>Today</h6>
             <ArrowDownSVG />
           </button>

@@ -1,5 +1,6 @@
 export interface MainLayoutProps {
   children?: React.ReactNode;
+  title: string;
   //   className?: React.ComponentProps<"div">["className"];
 }
 
